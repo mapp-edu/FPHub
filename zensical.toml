@@ -1,0 +1,66 @@
+[project]
+site_url = "https://mapp-edu.github.io/FPHub"
+site_name = "FP Hub"
+# site_description = "recursos per a diversos mòduls corresponents a cicles formatius de la família d'Informàtica i Comunicacions"
+# site_author = "Miquel París"
+
+# copyright = "Copyright &copy; 2026 Miquel París"
+
+# repo_url = "https://github.com/mapp-edu/FPHub"
+# repo_name = "mapp-edu/FPHub"
+# edit_uri = "edit/main/docs/"
+
+# Càrrega dels fulls d'estil personalitzats per a DAM/DAW i ASIX/SMX
+extra_css = [
+  "stylesheets/development.css",
+  "stylesheets/systems.css"
+]
+
+[project.theme]
+name = "material"
+custom_dir = "overrides"       # Carpeta per a l'injector de classes automàtiques per ruta
+features = [
+  "navigation.tabs",           # Pestanyes superiors (DAM/DAW vs ASIX/SMX)
+  "navigation.sections",       # Títols de subsecció al menú lateral
+  "navigation.path",           # Ruta de navegació (molles de pa)
+  "navigation.top",            # Botó de retorn ràpid cap amunt
+  "search.suggest",            # Suggerències de cerca avançada
+  "content.code.copy"          # Botó de copiar als blocs de codi
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+
+# Estructura de navegació amb pestanyes
+[[project.nav]]
+Inici = "index.md"
+
+[[project.nav]]
+"💻 Desenvolupament (DAM / DAW)" = [
+  { "Presentació" = "development/index.md" },
+  { "Mòduls" = [
+    { "Programació" = "development/programacio.md" },
+    { "Desenvolupament d'Interfícies" = "development/interficies.md" },
+    { "Acces a Dades" = "development/acces-dades.md" },
+    { "Programació Multimèdia" = "development/multimedia.md" }
+  ]}
+]
+
+[[project.nav]]
+"🖥️ Sistemes (ASIX / SMX)" = [
+  { "Presentació" = "systems/index.md" },
+  { "Mòduls" = [
+    { "Implantació de Sistemes" = "systems/sistemas-operativos.md" },
+    { "Planificació i Administració de Xarxes" = "systems/xarxes.md" },
+    { "Serveis de Xarxa i Internet" = "systems/serveis.md" }
+  ]}
+]

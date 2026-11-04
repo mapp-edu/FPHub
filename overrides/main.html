@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="{% if page and page.file and ('development' in page.file.src_path or 'dev' in page.file.src_path) %}theme-dev{% elif page and page.file and ('systems' in page.file.src_path or 'sys' in page.file.src_path) %}theme-sys{% endif %}">
+  {{ super() }}
+</div>
+{% endblock %}
